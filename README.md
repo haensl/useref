@@ -1,5 +1,4 @@
-useref [![Build Status](https://travis-ci.org/jonkemp/useref.svg?branch=master)](https://travis-ci.org/jonkemp/useref) [![Coverage Status](https://coveralls.io/repos/jonkemp/useref/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonkemp/useref?branch=master)
-=======================================================================================================================================================================================================================================================================================
+# useref [![Build Status](https://travis-ci.org/jonkemp/useref.svg?branch=master)](https://travis-ci.org/jonkemp/useref) [![Coverage Status](https://coveralls.io/repos/jonkemp/useref/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonkemp/useref?branch=master)
 
 [![NPM](https://nodei.co/npm/useref.png?downloads=true)](https://nodei.co/npm/useref/)
 
@@ -7,16 +6,12 @@ useref [![Build Status](https://travis-ci.org/jonkemp/useref.svg?branch=master)]
 
 Extracted from the grunt plugin [grunt-useref](https://github.com/pajtai/grunt-useref).
 
-Installation
-------------
-
+## Installation
 ```
 npm install useref
 ```
 
-Usage
------
-
+## Usage
 ```js
 var useref = require('useref');
 var result = useref(inputHtml);
@@ -34,7 +29,6 @@ Blocks are expressed as:
 -	**type**: either `js`, `css` or `remove`
 -	**alternate search path**: (optional) By default the input files are relative to the treated file. Alternate search path allows one to change that
 -	**path**: the file path of the optimized file, the target output
--	**alternate source path**: (optional) By default the src/href attribute of generated link/script tags points to *path*. Alternate source paths allows one to change that
 -	**parameters**: extra parameters that should be added to the tag
 
 An example of this in completed form can be seen below:
@@ -56,10 +50,6 @@ An example of this in completed form can be seen below:
   <!-- build:js scripts/async.js async data-foo="bar" -->
   <script type="text/javascript" src="scripts/three.js"></script>
   <script type="text/javascript" src="scripts/four.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/file.js(scripts/alternate.js) -->
-  <script type="text/javascript" src="scripts/five.js"></script>
   <!-- endbuild -->
 </body>
 </html>
@@ -84,9 +74,6 @@ var result = useref(sampleHtml);
 //       },
 //       'scripts/async.js': {
 //          'assets': [ 'scripts/three.js', 'scripts/four.js' ]
-//        },
-//       'scripts/file.js': {
-//          'assets': [ 'scripts/five.js']
 //        }
 //     }
 //   }
@@ -103,13 +90,11 @@ The resulting HTML would be:
 <body>
   <script src="scripts/combined.js"></script>
   <script src="scripts/async.js" async data-foo="bar" ></script>
-  <script src="scripts/alternate.js"></script>
 </body>
 </html>
 ```
 
-IE Conditional Comments
------------------------
+## IE Conditional Comments
 
 Internet Explorer Conditional Comments are preserved. The code below:
 
@@ -191,12 +176,10 @@ Results in:
 <script type="text/javascript" src="scripts/that.js"></script>
 ```
 
-Contributing
-------------
+## Contributing
 
 See the [CONTRIBUTING Guidelines](https://github.com/jonkemp/useref/blob/master/CONTRIBUTING.md)
 
-License
--------
+## License
 
 MIT © [Jonathan Kemp](http://jonkemp.com)
