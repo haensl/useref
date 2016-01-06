@@ -7,29 +7,32 @@
 Extracted from the grunt plugin [grunt-useref](https://github.com/pajtai/grunt-useref).
 
 ## Installation
+
 ```
 npm install useref
 ```
 
 ## Usage
+
 ```js
 var useref = require('useref');
 var result = useref(inputHtml);
 // result = [ replacedHtml, { type: { path: { 'assets': [ replacedFiles] }}} ]
 ```
 
+
 Blocks are expressed as:
 
 ```html
-<!-- build:<type>(alternate search path) <path>(alternate source path) <parameters> -->
+<!-- build:<type>(alternate search path) <path> <parameters> -->
 ... HTML Markup, list of script / link tags.
 <!-- endbuild -->
 ```
 
--	**type**: either `js`, `css` or `remove`
--	**alternate search path**: (optional) By default the input files are relative to the treated file. Alternate search path allows one to change that
--	**path**: the file path of the optimized file, the target output
--	**parameters**: extra parameters that should be added to the tag
+- **type**: either `js`, `css` or `remove`
+- **alternate search path**: (optional) By default the input files are relative to the treated file. Alternate search path allows one to change that
+- **path**: the file path of the optimized file, the target output
+- **parameters**: extra parameters that should be added to the tag
 
 An example of this in completed form can be seen below:
 
@@ -79,6 +82,7 @@ var result = useref(sampleHtml);
 //   }
 // ]
 ```
+
 
 The resulting HTML would be:
 
@@ -146,10 +150,10 @@ Becomes
 
 The handler function gets the following arguments:
 
--	*content* (String): The content of the custom use block
--	*target* (String): The "path" value of the use block definition
--	*options* (String): The extra attributes from the use block definition, the developer can parse as JSON or do whatever they want with it
--	*alternateSearchPath* (String): The alternate search path that can be used to maintain a coherent interface with standard handlers
+- *content* (String): The content of the custom use block
+- *target* (String): The "path" value of the use block definition
+- *options* (String): The extra attributes from the use block definition, the developer can parse as JSON or do whatever they want with it
+- *alternateSearchPath* (String): The alternate search path that can be used to maintain a coherent interface with standard handlers
 
 Include a handler for each custom block type.
 
@@ -158,7 +162,7 @@ Include a handler for each custom block type.
 #### options.noconcat
 
 Type: `Boolean`  
-Default: `false`
+Default: `false`  
 
 Strips out build comments but leaves the rest of the block intact without replacing any tags.
 
